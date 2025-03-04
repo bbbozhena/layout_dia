@@ -1,0 +1,75 @@
+.top-bar {
+  @include contentPaddingInline;
+  padding-block: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include onDesktop {
+    padding-block: 48px;
+  }
+  &__menu {
+    display: none;
+    gap: 48px;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+  &__start {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__menu-burger {
+    background-image: url(../images/icons/menu-icon.png);
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 24px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+  &__hire-us {
+    font-family: Poppins;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 19.5px;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    &::after {
+      content: "";
+      width: 100%;
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      height: 2px;
+      background-color: #2060f6;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
+.menu-name {
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 19.5px;
+  letter-spacing: 3px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
