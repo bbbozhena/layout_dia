@@ -51,6 +51,7 @@
     cursor: pointer;
     border-radius: 8px;
     text-align: center;
+    @include hover(transform, scale(1.1));
     @include onTablet {
       width: 264px;
     }

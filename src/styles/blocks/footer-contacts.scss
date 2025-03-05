@@ -22,8 +22,9 @@
     line-height: 36px;
     text-decoration: none;
     color: #fff;
+    @include hover(transform, scale(1.1));
   }
-  &__link{
+  &__link {
     text-decoration: none;
   }
   &__icon {

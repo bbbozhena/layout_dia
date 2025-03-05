@@ -7,6 +7,24 @@
   @include onDesktop {
     padding-block: 48px;
   }
+  &__aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #222;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding-top: 50px;
+    z-index: 1000;
+  }
+
   &__menu {
     display: none;
     gap: 48px;
@@ -27,6 +45,8 @@
     background-repeat: no-repeat;
     height: 24px;
     width: 24px;
+    cursor: pointer;
+    @include hover(transform, scale(1.1));
 
     @include onDesktop {
       display: none;
@@ -43,6 +63,7 @@
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
+    @include hover(transform, scale(1.1));
     &::after {
       content: "";
       width: 100%;
@@ -62,6 +83,9 @@
     }
   }
 }
+.top-bar__aside.active {
+  transform: translateX(0);
+}
 .menu-name {
   font-family: Poppins;
   font-weight: 700;
@@ -72,4 +96,5 @@
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
+  @include hover(transform, scale(1.1));
 }

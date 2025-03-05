@@ -26,8 +26,8 @@
     />
     <link
       rel="icon"
-      href="/src/images/icons/favicon.ico"
-      type="image/x-icon"
+      href="/src/images/icons/favicon.png"
+      type="image/png"
       sizes="32x32"
     />
   </head>
@@ -49,8 +49,42 @@
             <a
               href="#menu"
               class="top-bar__menu-burger"
+              onclick="toggleMenu(event)"
             ></a>
           </div>
+          <aside
+            id="aside"
+            class="top-bar__aside"
+          >
+            <a
+              class="menu-name"
+              href="#about-us"
+              onclick="closeMenu()"
+            >
+              About Us
+            </a>
+            <a
+              class="menu-name"
+              href="#services"
+              onclick="closeMenu()"
+            >
+              Services
+            </a>
+            <a
+              class="menu-name"
+              href="#testimonials"
+              onclick="closeMenu()"
+            >
+              Testimonials
+            </a>
+            <a
+              class="menu-name"
+              href="#contact-us"
+              onclick="closeMenu()"
+            >
+              Contact Us
+            </a>
+          </aside>
           <div class="top-bar__menu">
             <a
               class="menu-name"
@@ -508,7 +542,14 @@
           <h3 class="footer-contacts__title">Contact us</h3>
           <div class="footer-contacts__section">
             <h4 class="footer-contacts__section-title">Call us</h4>
-            <p class="footer-contacts__section-info">654 321 987</p>
+            <p class="footer-contacts__section-info">
+              <a
+                href="tel:654321987"
+                class="footer-contacts__section-info section-info-number"
+              >
+                654 321 987
+              </a>
+            </p>
           </div>
           <div class="footer-contacts__section">
             <h4 class="footer-contacts__section-title">Visit us</h4>
@@ -606,6 +647,25 @@
       </div>
     </footer>
 
-    <script src="scripts/main.js"></script>
+    <script>
+      function toggleMenu(event) {
+        event.preventDefault();
+        const menu = document.getElementById('aside');
+        menu.classList.toggle('active');
+      }
+
+      document.addEventListener('click', function (event) {
+        const menu = document.getElementById('aside');
+        const burger = document.querySelector('.top-bar__menu-burger');
+        if (!menu.contains(event.target) && !burger.contains(event.target)) {
+          menu.classList.remove('active');
+        }
+      });
+
+      function closeMenu() {
+        const menu = document.getElementById('aside');
+        menu.classList.remove('active');
+      }
+    </script>
   </body>
 </html>
