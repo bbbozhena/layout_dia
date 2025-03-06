@@ -1,5 +1,10 @@
 .header {
   background-color: #2c2c2c;
+  @include onDesktop {
+    padding-bottom: 104px;
+    @include contentPaddingInline;
+  }
+
 
   &__bottom {
     @include onDesktop {
@@ -16,8 +21,15 @@
       gap: 24px;
       margin-bottom: 147px;
     }
-    @include onDesktop{
+    @include onDesktop {
       margin: 160px 0;
+    }
+  }
+  &__slider {
+    @include onDesktop {
+      position: absolute;
+      right: 0;
+      width: 50%;
     }
   }
   &__title {

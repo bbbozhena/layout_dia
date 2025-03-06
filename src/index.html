@@ -47,7 +47,6 @@
               />
             </a>
             <a
-              
               class="top-bar__menu-burger"
               onclick="toggleMenu(event)"
             ></a>
@@ -502,7 +501,7 @@
           <form
             class="footer-message__form"
             action="#"
-            onsubmit="this.reset();window.scrollTo(0,0); return false; "
+            onsubmit="this.reset();return false; "
           >
             <input
               class="footer-message__input"
@@ -648,7 +647,7 @@
     </footer>
 
     <script>
-      function toggleMenu(event) {
+      window.toggleMenu = function(event) {
         event.preventDefault();
         const menu = document.getElementById('aside');
         menu.classList.toggle('active');

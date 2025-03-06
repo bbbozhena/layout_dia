@@ -4,6 +4,16 @@
   @include onTablet {
     margin: 148px 0;
   }
+  @include onDesktop {
+    display: flex;
+    justify-content: space-between;
+
+  }
+  &__information{
+    @include onDesktop{
+      @include contentPaddingInline;
+    }
+  }
   &__title {
     font-family: Poppins;
     font-weight: 700;
@@ -28,13 +38,12 @@
     color: #6c788b;
     max-width: 280px;
   }
-  @include onDesktop {
-    display: flex;
-    justify-content: center;
-    gap: 226px;
-  }
+
 
   &__cards {
+    @include onDesktop{
+      @include contentPaddingInline;
+    }
     @include onTablet {
       display: grid;
       grid-template-columns: 1fr 1fr;
