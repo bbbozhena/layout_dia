@@ -7,10 +7,9 @@
   @include onDesktop {
     display: flex;
     justify-content: space-between;
-
   }
-  &__information{
-    @include onDesktop{
+  &__information {
+    @include onDesktop {
       @include contentPaddingInline;
     }
   }
@@ -39,9 +38,8 @@
     max-width: 280px;
   }
 
-
   &__cards {
-    @include onDesktop{
+    @include onDesktop {
       @include contentPaddingInline;
     }
     @include onTablet {
@@ -63,10 +61,17 @@
 }
 
 .services-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #fff;
   border-radius: 16px;
   padding: 32px;
   margin: 24px 0;
+  height: 264px;
+  @include onBigDesktop{
+    width: 264px;
+  }
 
   &__number {
     background-color: #d1d8e7;
@@ -96,6 +101,9 @@
     text-decoration: none;
   }
   &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #2060f6;
     border: none;
     border-radius: 100%;

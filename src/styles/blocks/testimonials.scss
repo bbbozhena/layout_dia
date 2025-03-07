@@ -91,6 +91,7 @@
     height: 109px;
     border-radius: 50%;
     z-index: 1;
+    object-fit: cover;
     @include onTablet {
       width: 140px;
       height: 140px;

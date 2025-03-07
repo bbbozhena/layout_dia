@@ -53,6 +53,9 @@
 
 .navigation .prev,
 .navigation .next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: white;
   color: black;
   border: none;
@@ -60,6 +63,8 @@
   cursor: pointer;
   border-radius: 100%;
   transition: background-color 0.3s;
+  height: 20px;
+  width: 20px;
 }
 
 input[type="checkbox"] {
@@ -95,7 +100,7 @@ input[type="checkbox"] {
     transform: translateX(35%);
   }
   @include onBigDesktop {
-    padding-inline: 48px;
+    padding-inline: 68px;
   }
 
   &__intro {
